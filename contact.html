@@ -1,58 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
+
+<!-- contact page for hw3 - business website -->
 
 <html>
-	<head>
-		<link rel="stylesheet" href="midterm.css">
-		<link href='https://fonts.googleapis.com/css?family=Cedarville Cursive' rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="icon" href="images/logo1.png">
-		<title>GLG: Contact</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact - Iroshizuku Ink - best quality ink</title>
+	<link rel="stylesheet" type="text/css" href="default.css">
+	
+	<style type="text/css">
+		
+		.contactForm {
+			font-size:20px;
+			padding:20px;
+		}
+		
+		.contactForm label {
+			display:block;
+			padding-top: 20px;
+			padding-bottom: 6px;
+		}
+		
+		.contactForm input[type="text"], textarea {
+			padding:8px;
+			width:50%;
+			height:10%;
+		}
+		
+		.button {
+			display: block;
+			background:#3D3333;
+			color:white;
+			padding:10px 15px;
+			border:none; 
+		}
+		
+		.button:hover {
+			background:#A6543A;
+			color: white;
+		}
+		
+	</style>
+</head>
 
-		<style>
-			table, th, td {
-				border: solid black 1px;
-				margin: auto;
-				width: 50%;
-			}
-
-		</style>
-	</head>
-	<body>
-		<h1>Great Lakes Gallery</h1>
-
-		<div class="nav-bg">
-			<ul class="nav-content">
-				<li class="nav-li"><a href="index.html">HOME</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
-				<li class="nav-li"><a href="about.html">ABOUT</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
-				<li class="nav-li dropdown"><a href="art.html">ART GALLERY</a>
-					<i class="fa fa-angle-down fa-xs" aria-hidden="true"></i>
-					<div class="dropdown-content">
-						<a href="art.html">GALLERY</a>
-						<a href="artist1_MLE.html">Martha Leugers-Encherman</a>
-						<a href="artist2_AR.html">Alexis Rockman</a>
-						<a href="artist3_RD.html">Ryan Dineen</a>
-					</div>
-				</li>&nbsp;&nbsp;•&nbsp;&nbsp;
-				<li class="nav-li"><a href="get-involved.html">GET INVOLVED</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
-				<li class="nav-li"><a href="news.html">NEWS</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
-				<li class="nav-li currentPage"><a href="contact.html">CONTACT</a></li>
+<body>
+	<header id="mainHeader">
+		<div class = "container">
+			<h1>Iroshizuku Ink</h1>
+		</div>
+	</header>
+	
+	<nav id="navbar">
+		<div class="container">
+			<ul>
+				<li><a href="default.html">Home</a></li>
+				<li><a href="service.html">Service</a></li>
+				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</div>
-
-		<div id="hehe">
-		</div>
-
-		<table>
-			<tr>
-				<th>Phone</th>
-				<th>Email</th>
-			</tr>
-			<tr>
-				<td>555-555-5555</td>
-				<td>gallery@hotmail.com</td>
-			</tr>
-		</table>
-
-	</body>
+	</nav>
+	
+	<div class="contactForm">
+		<h2>Questions for us?</h2>
+		<form>
+			
+			<label>Name:</label>
+			<input type="text" name="name">
+			
+			<label>Email:</label>
+			<input type="text" name="email">
+			
+			<label>Where did you hear about us?</label>
+			<select name="source">
+				<option value="google">Google</option>
+				<option value="facebook">Facebook</option>
+				<option value="instagram">Instagram</option>
+				<option value="other">other</option>
+			</select>
+			
+			<label>Message:</label>
+			<textarea name="message"></textarea>
+			<br/><br/><br/>
+			<input class="button" type="submit" value="send" name="">
+			
+		</form>
+	</div>
+		
+	
+	
+	<footer id="mainFooter">
+		<p>Copyright &copy; 2020 Iroshizuku Ink</p>
+	</footer>
+	
+</body>
 </html>
