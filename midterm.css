@@ -81,3 +81,8 @@ li.currentPage {
 .dropdown:hover .dropdown-content {
 	display: block;
 }
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+}
