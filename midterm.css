@@ -86,3 +86,8 @@ li.currentPage {
 	display: flex;
 	flex-flow: row wrap;
 }
+
+.flex-item {
+	flex-basis: 0;
+	flex-grow: 1:
+}
