@@ -3,11 +3,16 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="midterm.css">
-		<link href='https://fonts.googleapis.com/css?family=Cedarville Cursive' rel='stylesheet'>
-		<link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+		<link href="https://fonts.googleapis.com/css?family=Cedarville Cursive" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="icon" href="images/logo1.png">
 		<title>GLG: Gallery</title>
+		<style>
+			#gallery {
+				float:left;
+			}
+		</style>
 
 	</head>
 	<body>
@@ -31,6 +36,42 @@
 				<li class="nav-li"><a href="contact.html">CONTACT</a></li>
 			</ul>
 		</div>
+		
+		<div id="gallery">
+			
+		</div>
+		
+		<script language="javascript">
+			
+			window.onload = function() 
+			{
+				
+				var art = function(src, title, dimensionW, dimensionH) {
+					var img = new Image();
+					img.src = src;
+					img.innerHTML = title;
+					return img;
+				};
+				
+				var images = [];
+				images.push(art("about1.png", "abt1", "20in", "20in"));
+				images.push(art("about2.png", "abt2", "30in", "30in"));
+				
+				// var images = ["about1.png", "about2.png"];
+				
+				images.forEach(function(image) {
+					var img = document.createElement("img");
+					img.src = image.src;
+					document.getElementById("gallery").appendChild(img);
+						
+					document.getElementById("gallery").appendChild(img.);
+				});
+			}
+		
+		</script>
+		
+
+		
 
 	<footer id="mainFooter">
 		<p>Copyright &copy; 2020 The Intimidating Elizas</p>
