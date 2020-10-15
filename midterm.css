@@ -91,3 +91,9 @@ li.currentPage {
 .flex-item {
 	flex-grow: 1;
 }
+
+#mainFooter {
+	text-align: center;
+	border-top-style: solid;
+	border-top-color: #80BFFF;
+}
