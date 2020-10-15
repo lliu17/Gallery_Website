@@ -89,4 +89,5 @@ li.currentPage {
 }
 
 .flex-item {
+	flex-grow: 1;
 }
