@@ -96,4 +96,7 @@ li.currentPage {
 	text-align: center;
 	border-top-style: solid;
 	border-top-color: #80BFFF;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
