@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="midterm.css">
+		<link href="https://fonts.googleapis.com/css?family=Cedarville Cursive" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" href="images/logo1.png">
+		<title>GLG: Contact</title>
+
+		<style>
+			table, th, td {
+				border: solid black 1px;
+				margin: auto;
+				width: 50%;
+			}
+			
+			.contactForm {		
+				padding: 20px 20px;
+			}
+			
+			.contactForm h2 {
+				
+			}
+			
+			.contactForm label {
+				display:block;
+				padding: 20px 0 10px 0;
+			}
+			
+			.contactForm input, textarea {
+				padding: 8px;
+				width:50%;
+				height:10%;
+			}
+			
+			.button {
+				font-size: 15px;
+				text-align: center;
+				display: block;
+				background: #80BFFF;
+				color: white;
+				margin: 20px 0 0 0;
+				border:none;
+			}
+			
+			footer {
+				position:absolute;
+				bottom:0;
+				width:100%;
+				border-top: 1px solid #80BFFF;
+				text-align: center;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Great Lakes Gallery</h1>
+
+		<div class="nav-bg">
+			<ul class="nav-content">
+				<a href="index.html">
+					<img border="0" alt="GLG Logo" src="images/logo1.png" width="35">
+				</a>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="about.html">ABOUT</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li dropdown"><a href="art.html">ART GALLERY</a>
+					<i class="fa fa-angle-down fa-xs" aria-hidden="true"></i>
+					<div class="dropdown-content">
+						<a href="art.html">GALLERY</a>
+						<a href="artist1_MLE.html">Martha Leugers-Encherman</a>
+						<a href="artist2_AR.html">Alexis Rockman</a>
+						<a href="artist3_RD.html">Ryan Dineen</a>
+					</div>
+				</li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="get-involved.html">GET INVOLVED</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="news.html">NEWS</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li currentPage"><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+
+		<div id="hehe">
+		</div>
+
+		<div class="contactForm">
+			<h2>Contact Form</h2>
+			<form>
+				<label>Name:</label>
+				<input type="text" name="name" required/>
+				
+				<label>Email:</label>
+				<input type="email" name="email" required/>
+				
+				<label>Phone:</label>
+				<input type="tel" name="phone"/>
+				
+				<label>Message:</label>
+				<textarea name="message" required></textarea>
+				
+				<input class="button" type="submit" value="send"/>
+			</form>
+		</div>
+		
+				
+		<footer>
+			<p>Copyright &copy; 2020 The Intimadating Elizas</p>
+		</footer>
+
+	</body>
+</html>
