@@ -43,9 +43,6 @@ ul {
 	color: #80BFFF;
 }
 
-.nav-bg {
-
-}
 
 li.currentPage {
 	color: #00008B;
@@ -93,10 +90,11 @@ li.currentPage {
 }
 
 #mainFooter {
+	background-color: #FFFFFF;
 	text-align: center;
 	border-top-style: solid;
 	border-top-color: #80BFFF;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 }
