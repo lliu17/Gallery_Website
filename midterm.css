@@ -100,3 +100,7 @@ li.currentPage {
 	bottom: 0;
 	width: 100%;
 }
+
+#portrait {
+	filter: drop-shadow(10px 10px 0 #80BFFF);
+}
