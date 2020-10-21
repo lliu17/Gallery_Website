@@ -9,9 +9,46 @@
 		<link rel="icon" href="images/logo1.png">
 		<title>GLG: Gallery</title>
 		<style>
-			#gallery {
-				float:left;
+						
+			#gallery div img {
+				display: block;
+				margin-left:auto;
+				margin-right:auto;
+				max-width:100%;
+				max-height:100%;
 			}
+			
+			#gallery div {
+				padding-top: 3%;
+				padding-left: 3%;
+				padding-bottom: 3%;
+				display:inline-block;
+				width:33%;
+				height:400px;
+				box-sizing: border-box;
+			}
+
+			footer {
+                position:absolute;
+                bottom:0;
+				right:0;
+				left:0;
+                width:100%;
+                text-align: center;
+                color:rgba(128,191,255,0.65);
+            }
+			
+			@media(max-width:600px) {
+				#gallery div  {
+					width:100%;
+					height:33%;
+					margin: 10px;
+					padding: 10px;
+					display: block;
+				}
+			}
+
+			
 		</style>
 
 	</head>
@@ -37,37 +74,36 @@
 			</ul>
 		</div>
 		
-		<div id="gallery">
-			
+		<div id="gallery">		
 		</div>
 		
 		<script language="javascript">
 			
-			window.onload = function() 
-			{
-				
-				var art = function(src, title, dimensionW, dimensionH) {
-					var img = new Image();
-					img.src = src;
-					img.innerHTML = title;
-					return img;
-				};
-				
-				var images = [];
-				images.push(art("about1.png", "abt1", "20in", "20in"));
-				images.push(art("about2.png", "abt2", "30in", "30in"));
-				
-				// var images = ["about1.png", "about2.png"];
-				
-				images.forEach(function(image) {
-					var img = document.createElement("img");
-					img.src = image.src;
-					document.getElementById("gallery").appendChild(img);
-						
-					document.getElementById("gallery").appendChild(img.);
-				});
+			function art(src, artist, title, dimension) {
+				this.src = src;
+				this.artsit = artist;
+				this.title = title;
+				this.dimension = dimension;
 			}
-		
+			
+			var MLE = [];
+			MLE.push(new art("images/MLE_3_birches.jpg","MLE","Birches","10x10in"));
+			MLE.push(new art("images/MLE_blue_water_gold_sand.jpg","MLE","BLUE","10x10in"));
+			MLE.push(new art("images/MLE_historic_fishtown.jpg","MLE","historic","10x10in"));
+			
+			window.onload = function() 
+			{		
+				for(i=0; i<MLE.length; i++) {
+					var img = document.createElement("img");
+					img.src = MLE[i].src;
+					
+					var div = document.createElement("div");
+					div.class = "artwork";
+					div.appendChild(img);
+					
+					document.getElementById("gallery").appendChild(div);
+				}
+			}
 		</script>
 		
 
