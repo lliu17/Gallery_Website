@@ -9,6 +9,57 @@
 		<link rel="icon" href="images/logo1.png">
 		<title>GLG: Get Involved</title>
 
+		<style>
+			.left, .right {
+				display: inline-block;
+				margin-bottom: 40px;
+			}
+
+			.left {
+				width: 40%;
+				float: left;
+				margin-left: 180px;
+				padding-bottom: 20px;
+			}
+
+			.right {
+				width: 40%;
+				float: right;
+			}
+
+			#dvtext {
+			  display: none;
+			}
+
+			#customAmt:checked ~ #dvtext {
+			  display: block;
+			}
+
+			.button {
+				background-color: #80BFFF;
+				color: white;
+				font-weight: bold;
+                transition-duration: 0.4s;
+			}
+
+			.button:hover { background-color: #0059B3; }
+
+		</style>
+
+		<script>
+			function donationMsg() {
+				alert("Thank you for your generous donation!");
+			}
+
+			function registerMsg() {
+				var eventId = document.getElementById("events");
+				var eventName = eventId.options[eventId.selectedIndex].text;
+				alert("You have successfully registered for " + eventName + "!");
+
+			}
+
+		</script>
+
 	</head>
 	<body>
 		<h1>Great Lakes Gallery</h1>
@@ -31,6 +82,76 @@
 				<li class="nav-li"><a href="contact.html">CONTACT</a></li>
 			</ul>
 		</div>
+
+		<div class="left">
+			<h2>Become a Donor</h2>
+			<form>
+				<label>Name:</label><br>
+				<input type="text" name="name" required/><br><br>
+
+				<label>Email:</label><br>
+				<input type="email" name="email" required/><br><br>
+
+				<label>Donation Amount:</label><br>
+				<input type="radio" id="5dollar" name="amount" value="5dollar">
+				<label for="5dollar">$5</label><br>
+				<input type="radio" id="10dollar" name="amount" value="10dollar">
+				<label for="10dollar">$10</label><br>
+				<input type="radio" id="20dollar" name="amount" value="20dollar">
+				<label for="20dollar">$20</label><br>
+				<input type="radio" id="customAmt" name="amount" value="customAmt">
+				<label for="customAmt">Custom Amount</label><br>
+
+				<div id="dvtext">
+			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter amount:
+			    <input type="text" id="txtBox" /><br><br>
+				</div>
+
+				<label>Donation Frequency:</label><br>
+				<input type="radio" id="oneTime" name="freq" value="oneTime">
+				<label for="oneTime">One Time</label><br>
+				<input type="radio" id="monthly" name="freq" value="monthly">
+				<label for="monthly">Monthly</label><br><br>
+
+				<label>Comment or Message:</label><br>
+				<textarea name="message"></textarea><br>
+
+				<input class="button" type="submit" value="send" onclick="donationMsg()"/>
+
+			</form>
+		</div>
+
+		<div class="right">
+			<h2>Register for an Upcoming Event</h2>
+			<form>
+				<label for="events">Select Event:</label><br>
+				<select id="events" name="events">
+					<option value="gallery">Gallery Talk, First Friday</option>
+					<option value="potteryClass">Wheel Throwing Pottery Class</option>
+					<option value="origami">Origami 101: Cranes</option>
+					<option value="openMic">Open Mic Night</option>
+					<option value="kids">Kids Story Time</option>
+				</select><br><br>
+
+				<label>Name:</label><br>
+				<input type="text" name="name" required/><br><br>
+
+				<label>Email:</label><br>
+				<input type="email" name="email" required/><br><br>
+
+				<label for="hear">How did you hear about us?</label><br>
+				<select id="hear" name="hear">
+					<option value="newsletter">Newsletter</option>
+					<option value="employee">Employee</option>
+					<option value="friend">Friend/Affiliate</option>
+					<option value="advertisement">Advertisement</option>
+					<option value="other">Other</option>
+				</select><br><br>
+
+				<input class="button" type="submit" value="send" onclick="registerMsg()"/>
+			</form>
+		</div>
+
 
 	<footer id="mainFooter">
 		<p>Copyright &copy; 2020 The Intimidating Elizas</p>
