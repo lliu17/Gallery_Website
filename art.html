@@ -76,6 +76,191 @@
 			</ul>
 		</div>
 		
+		<div id="gallery">	
+			<!-- make script tag for putting divs in here -->	
+		</div>
+		
+		<script language="javascript">
+			
+			function art(src, artist, title, dimension) {
+				this.src = src;
+				this.artist = artist;
+				this.title = title;
+				this.dimension = dimension;
+			}
+
+			
+			var MLE = [];
+			MLE.push(new art("images/MLE_3_birches.jpg","MLE","Birches","10x10in"));
+			MLE.push(new art("images/MLE_blue_water_gold_sand.jpg","MLE","BLUE","10x10in"));
+			MLE.push(new art("images/MLE_historic_fishtown.jpg","MLE","historic","10x10in"));
+
+			var idsMLE = [];
+			
+			window.onload = function() 
+			{		
+				for(i=0; i<MLE.length; i++) {
+					var img = document.createElement("img");
+					img.src = MLE[i].src;
+					
+					var div = document.createElement("div");
+					div.class = "artwork";
+					div.appendChild(img);
+					
+					idsMLE.push("mle" + i);
+					div.id = idsMLE[i];
+					document.getElementById("gallery").appendChild(div);
+					document.getElementById(idsMLE[i]).addEventListener("click", function (event) {
+						alert(this.id);
+						modalWindow(this.id.charAt(3)); //substring? subat? 
+						//alert("I work!");
+					})
+				}
+			}
+
+			function modalWindow(i) {
+				var divBox = document.createElement("div");
+				divBox.id = (MLE[i].artist + "modal");
+				divBox.class = "modalBox";
+				alert("First box made " + MLE[i].artist);
+				return;
+				
+				var modalPic = document.createElement("img");
+				modalPic.src = this.src;
+				modalPic.class = "modalPic";
+
+				var modalText = document.createElement("div");
+				modalText.id = divBox.id + "Text";
+				modalText.class = "modalText";
+
+				var closeSpan = document.createElement("span");
+				closeSpan.id = divBox.id + "Close";
+
+				var email = document.createElement("input");
+				email.type = email;
+				email.required = 1;
+				email.placeholder = "Email";
+
+				var buyButton = document.createElement("button");
+				buyButton.id = idsMLE[i] + "buy";
+				buyButton.value = "Contact " + MLE[i].artist + " for Details";
+
+				divBox.appendChild(modalPic);
+				divBox.appendChild(modalText);
+				modalText.appendChild(email);
+				modalText.appendChild(buyButton);
+				divBox.appendChild(closeSpan);
+
+				document.getElementById(closeSpan.id).innerHTML = "&times;";
+				document.getElementById(modalText.id).innerHTML = 
+				"Title: " + MLE[i].title + "</br>Artist: " + MLE[i].artist + "</br>Dimensions: " + MLE[i].dimension + "</br>Image ID Number: " + idsMLE[i];
+
+				buyButton.onclick = function() {
+					(alert("Your contact details and interest in " + MLE[i].title + " have been sent to " + MLE[i].artist + " and they will get in touch with you shortly. Thank you for supporting the Great Lakes!"));
+				}
+
+				closeSpan.onclick = function() {
+					divBox.style.display = "none";
+				}
+
+				window.onclick = function(event) {
+					if (event.target == divBox) {
+						divBox.style.display = "none";
+					}
+				}
+			}
+
+
+		</script>
+		
+
+		
+
+	<footer id="mainFooter">
+		<p>Copyright &copy; 2020 The Intimidating Elizas</p>
+	</footer>
+	
+	</body>
+</html>
+=======
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<link rel="stylesheet" href="midterm.css">
+		<link href="https://fonts.googleapis.com/css?family=Cedarville Cursive" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="icon" href="images/logo1.png">
+		<title>GLG: Gallery</title>
+		<style>
+						
+			#gallery div img {
+				display: block;
+				margin-left:auto;
+				margin-right:auto;
+				max-width:100%;
+				max-height:100%;
+			}
+			
+			#gallery div {
+				padding-top: 3%;
+				padding-left: 3%;
+				padding-bottom: 3%;
+				display:inline-block;
+				width:33%;
+				height:400px;
+				box-sizing: border-box;
+			}
+
+			footer {
+                position:absolute;
+                bottom:0;
+				right:0;
+				left:0;
+                width:100%;
+                text-align: center;
+                color:rgba(128,191,255,0.65);
+            }
+			
+			@media(max-width:600px) {
+				#gallery div  {
+					width:100%;
+					height:33%;
+					margin: 10px;
+					padding: 10px;
+					display: block;
+				}
+			}
+
+			
+		</style>
+
+	</head>
+	<body>
+		<h1>Great Lakes Gallery</h1>
+
+		<div class="nav-bg">
+			<ul class="nav-content">
+				<a href="index.html">
+					<img style="border:0" alt="GLG Logo" src="images/logo1.png" width="35">
+				</a>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="about.html">ABOUT</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="currentPage nav-li dropdown"><a href="art.html">ART GALLERY</a>
+					<i class="fa fa-angle-down fa-xs" aria-hidden="true"></i>
+					<div class="dropdown-content">
+						<a href="art.html">GALLERY</a>
+						<a href="artist1_MLE.html">Martha Leugers-Encherman</a>
+						<a href="artist2_AR.html">Alexis Rockman</a>
+						<a href="artist3_RD.html">Ryan Dineen</a>
+					</div>
+				</li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="get-involved.html">GET INVOLVED</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="news.html">NEWS</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
+				<li class="nav-li"><a href="contact.html">CONTACT</a></li>
+			</ul>
+		</div>
+		
 		<div id="gallery">		
 		</div>
 		
