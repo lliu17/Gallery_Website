@@ -1,4 +1,4 @@
-
+/*
 h1 {
 	font-family: 'Cedarville Cursive';
 	text-align: center;
@@ -208,3 +208,109 @@ li.currentPage {
 #portrait {
 	filter: drop-shadow(10px 10px 0 #80BFFF);
 }
+*/
+h1 {
+	font-family: 'Cedarville Cursive';
+	text-align: center;
+	font-weight: bold;
+}
+
+h3 {
+	text-align: center;
+	font-weight: bold;
+}
+
+body {
+	font-family: 'Work Sans';
+}
+
+a:link {
+	text-decoration: none;
+	color: #80BFFF;
+}
+
+a:visited {
+	color: #80BFFF;
+}
+
+a:hover {
+	color: #0059B3;
+}
+
+ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+.nav-ul {
+	white-space: nowrap;
+}
+
+.nav-li {
+	display: inline;
+}
+
+.nav-content {
+	color: #80BFFF;
+}
+
+
+li.currentPage {
+	color: #00008B;
+	font-weight: bold;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: white;
+	min-width: 110px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	font-size: 14px;
+}
+
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	background-color: rgba(128, 191, 255, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+.flex-item {
+	flex-grow: 1;
+}
+
+#mainFooter {
+	background-color: #FFFFFF;
+	text-align: center;
+	border-top-style: solid;
+	border-top-color: #80BFFF;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#portrait {
+	filter: drop-shadow(10px 10px 0 #80BFFF);
+}
+
