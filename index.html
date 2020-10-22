@@ -67,7 +67,24 @@
                 color:rgba(128,191,255,0.65);
             }
 
-            @media only screen and (max-device-width: 480px), (max-width: 800px) {
+            @media only screen and (max-device-width: 480px) {
+                .home-image {
+                    background-image: url("images/MLE_lakes_and_dunes.jpg");
+                    height: 100%;
+                    width: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                }
+
+                .home-text {
+                    font-size: 30px;
+                }
+
+            }
+
+            @media (max-width: 800px) {
                 .home-image {
                     background-image: url("images/MLE_lakes_and_dunes.jpg");
                     height: 100%;
