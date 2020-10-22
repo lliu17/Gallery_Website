@@ -58,7 +58,7 @@
 		<div class="nav-bg">
 			<ul class="nav-content">
 				<a href="index.html">
-					<img border="0" alt="GLG Logo" src="images/logo1.png" width="35">
+					<img style="border:0" alt="GLG Logo" src="images/logo1.png" width="35">
 				</a>&nbsp;&nbsp;•&nbsp;&nbsp;
 				<li class="nav-li"><a href="about.html">ABOUT</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
 				<li class="currentPage nav-li dropdown"><a href="art.html">ART GALLERY</a>
@@ -76,22 +76,26 @@
 			</ul>
 		</div>
 		
-		<div id="gallery">		
+		<div id="gallery">	
+			<!-- make script tag for putting divs in here -->	
 		</div>
 		
 		<script language="javascript">
 			
 			function art(src, artist, title, dimension) {
 				this.src = src;
-				this.artsit = artist;
+				this.artist = artist;
 				this.title = title;
 				this.dimension = dimension;
 			}
+
 			
 			var MLE = [];
 			MLE.push(new art("images/MLE_3_birches.jpg","MLE","Birches","10x10in"));
 			MLE.push(new art("images/MLE_blue_water_gold_sand.jpg","MLE","BLUE","10x10in"));
 			MLE.push(new art("images/MLE_historic_fishtown.jpg","MLE","historic","10x10in"));
+
+			var idsMLE = [];
 			
 			window.onload = function() 
 			{		
@@ -103,9 +107,70 @@
 					div.class = "artwork";
 					div.appendChild(img);
 					
+					idsMLE.push("mle" + i);
+					div.id = idsMLE[i];
 					document.getElementById("gallery").appendChild(div);
+					document.getElementById(idsMLE[i]).addEventListener("click", function (event) {
+						alert(this.id);
+						modalWindow(this.id.charAt(3)); //substring? subat? 
+						//alert("I work!");
+					})
 				}
 			}
+
+			function modalWindow(i) {
+				var divBox = document.createElement("div");
+				divBox.id = (MLE[i].artist + "modal");
+				divBox.class = "modalBox";
+				alert("First box made " + MLE[i].artist);
+				return;
+				
+				var modalPic = document.createElement("img");
+				modalPic.src = this.src;
+				modalPic.class = "modalPic";
+
+				var modalText = document.createElement("div");
+				modalText.id = divBox.id + "Text";
+				modalText.class = "modalText";
+
+				var closeSpan = document.createElement("span");
+				closeSpan.id = divBox.id + "Close";
+
+				var email = document.createElement("input");
+				email.type = email;
+				email.required = 1;
+				email.placeholder = "Email";
+
+				var buyButton = document.createElement("button");
+				buyButton.id = idsMLE[i] + "buy";
+				buyButton.value = "Contact " + MLE[i].artist + " for Details";
+
+				divBox.appendChild(modalPic);
+				divBox.appendChild(modalText);
+				modalText.appendChild(email);
+				modalText.appendChild(buyButton);
+				divBox.appendChild(closeSpan);
+
+				document.getElementById(closeSpan.id).innerHTML = "&times;";
+				document.getElementById(modalText.id).innerHTML = 
+				"Title: " + MLE[i].title + "</br>Artist: " + MLE[i].artist + "</br>Dimensions: " + MLE[i].dimension + "</br>Image ID Number: " + idsMLE[i];
+
+				buyButton.onclick = function() {
+					(alert("Your contact details and interest in " + MLE[i].title + " have been sent to " + MLE[i].artist + " and they will get in touch with you shortly. Thank you for supporting the Great Lakes!"));
+				}
+
+				closeSpan.onclick = function() {
+					divBox.style.display = "none";
+				}
+
+				window.onclick = function(event) {
+					if (event.target == divBox) {
+						divBox.style.display = "none";
+					}
+				}
+			}
+
+
 		</script>
 		
 
