@@ -189,7 +189,18 @@
 			}
 
 			function modalWindow(imgId) {
+				var painting;
 				img = document.getElementById("modalImg");
+				if (imgId.length == mle) {
+					painting = MLE[imgId.charAt(3)];
+				}
+				else if (imgId.charAt(0) == "a") {
+					painting = AR[imgId.charAt(2)];
+				} else {
+					painting = RD[imgId.charAt(2)];
+				}
+
+				img.src = painting.src;
 			}
 
 
