@@ -72,8 +72,7 @@
 				<li class="nav-li"><a href="news.html">NEWS</a></li>&nbsp;&nbsp;•&nbsp;&nbsp;
 				<li class="nav-li"><a href="contact.html">CONTACT</a></li>
 			</ul>
-		</div>
-		
+		</div>	
 		<div id="gallery">	
 			<script language="javascript">
 				function art(src, artist, title, dimension) {
@@ -128,13 +127,7 @@
 			var buyerEmail = document.getElementById("buyerEmail");
 			var buyButton = document.getElementById("buyButton");
 			var modalBox = document.getElementById("modalBox");
-			var xSpan = document.getElementsByClassName("close");
 
-			
-
-			xSpan.onclick = function () {
-				modalBox.style.display = "none";
-			};
 
 			window.onclick = function(event) {
   				if (event.target == modalBox) {
@@ -159,8 +152,7 @@
 					document.getElementById("gallery").appendChild(div);
 					document.getElementById(idsMLE[i]).addEventListener("click", function (event) {
 						modalBox.style.display = "block";
-						modalWindow(this.id);//substring? subat? 
-						//alert("I work!");
+						modalWindow(this.id);
 					})
 				}
 
@@ -178,7 +170,6 @@
 					document.getElementById(idsRD[i]).addEventListener("click", function (event) {
 						modalBox.style.display = "block";
 						modalWindow(this.id);
-						//alert("I work!");
 					})
 				}
 
@@ -195,10 +186,8 @@
 					div.id = idsAR[i];
 					document.getElementById("gallery").appendChild(div);
 					document.getElementById(idsAR[i]).addEventListener("click", function (event) {
-						//alert(this.id);
 						modalBox.style.display = "block";
-						modalWindow(this.id); //substring? subat? 
-						//alert("I work!");
+						modalWindow(this.id); 
 					})
 				}
 			}
@@ -225,7 +214,7 @@
 
 			function thankBuyer() {
 				if (buyerEmail.value == "") {
-						alert("Please enter your email to enquire")
+						alert("Please enter your email to enquire");
 					} else {
 						alert("Thank you for your interest in '" + document.getElementById("imgTitle").innerText + "'.  Your email has been sent to " + document.getElementById("imgArtist").innerText + " and they will get in touch with you shortly. Thank you for supporting the Great Lakes!");
 						buyerEmail.value = "";
