@@ -39,6 +39,7 @@
                 color:rgba(128,191,255,0.65);
             }
 			
+
 			@media(max-width:600px) {
 				#gallery div  {
 					width:100%;
@@ -108,7 +109,7 @@
 		</div>
 		
 		<div id="modalBox">
-			<img id="modalImg" src="#">
+			<img id="modalImg" class="left" src="#">
 			<div class="modalContent">
 				<span class="closeModal">&times;</span>
 				<h2>Artist</h2>
@@ -126,6 +127,21 @@
 			var idsMLE = [];
 			var idsRD = [];
 			var idsAR = [];
+
+			var modalBox = document.getElementById("modalBox");
+			var xSpan = document.getElementsByClassName("closeModal");
+
+			
+
+			xSpan.onclick = function () {
+				modalBox.style.display = "none";
+			};
+
+			window.onclick = function(event) {
+  				if (event.target == modalBox) {
+    				modalBox.style.display = "none";
+  				}
+			}
 			
 			window.onload = function() 
 			{		
@@ -180,7 +196,6 @@
 					document.getElementById("gallery").appendChild(div);
 					document.getElementById(idsAR[i]).addEventListener("click", function (event) {
 						alert(this.id);
-						modalBox = document.getElementById("modalBox");
 						modalBox.style.display = "block";
 						modalWindow(this.id); //substring? subat? 
 						//alert("I work!");
@@ -189,6 +204,7 @@
 			}
 
 			function modalWindow(imgId) {
+
 				var painting;
 				img = document.getElementById("modalImg");
 				if (imgId.length == mle) {
@@ -203,6 +219,7 @@
 				img.src = painting.src;
 			}
 
+			
 
 		</script>
 		

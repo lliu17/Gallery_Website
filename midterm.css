@@ -124,13 +124,28 @@ li.currentPage {
   
   /* Modal Content/Box */
   #modalContent {
-	background-color: #fefefe;
-	margin: 15% auto; /* 15% from the top and centered */
-	padding: 20px;
-	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+	background-color: #80BFFF;
+	padding: 10px;
+	padding-left: 20px;
+	width: 20%;
+	height: 600px;
+	margin:0;
+	float: right;
+	border-radius: 1%;
+	margin-bottom: 10px;
   }
   
+#modalImg {
+	padding: 10px;
+	padding-left: 20px;
+	max-height: 700px;
+	max-width: 70%;
+	margin:0;
+	float: left;
+	border-radius: 1%;
+	margin-bottom: 10px;
+}
+
   /* The Close Button */
 .close {
 	color: #aaa;
