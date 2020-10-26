@@ -203,7 +203,7 @@ li.currentPage {
 
 }
 
-@media only screen and (max-device-width: 456px) {
+@media only screen and (max-device-width: 480px) {
 	#close {
 		display: block;
 		padding: 5px;
