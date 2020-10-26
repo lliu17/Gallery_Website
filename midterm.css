@@ -180,7 +180,12 @@ li.currentPage {
 	margin-bottom: 10px;
 }
 
- @media (max-width: 800px) {
+
+#close {
+	display: none;
+}
+
+@media (max-width: 800px) {
 	.modalContent, #modalImg{
 		display: block;
 		width:80%;
@@ -194,5 +199,13 @@ li.currentPage {
 	
 	.modalContent {
 		width:50%;
+	}
+
+}
+
+@media only screen and (max-device-width: 456px) {
+	#close {
+		display: block;
+		padding: 5px;
 	}
 }

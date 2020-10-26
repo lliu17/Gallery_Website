@@ -121,6 +121,7 @@
 				<p id="imgDimensions"></p>
 				<input type="email" id="buyerEmail" placeholder="Email">
 				<button id="buyButton" onclick="thankBuyer()">Enquire</button>
+				<button id="close" onclick="closeWindow()">Return to gallery</button>
 			</div>
 		</div>
 
@@ -142,7 +143,9 @@
   				}
 			}
 
-			
+			function close() {
+				modalBox.style.display = "none";
+			}
 			
 			window.onload = function() 
 			{		
