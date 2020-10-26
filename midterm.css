@@ -130,7 +130,6 @@ li.currentPage {
 
 /* The Modal (background) */
 #modalBox {
-	margin-top: 10px;
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
@@ -142,11 +141,13 @@ li.currentPage {
 	background-color: rgba(255, 255, 255, .8); /* Fallback color */
   }
   
+/*
 #innerBox {
 	position: relative;
 	margin-left:auto;
 	margin-right:auto;
 }
+*/
 
   /* Modal Content/Box */
   .modalContent {
@@ -176,14 +177,19 @@ li.currentPage {
 	margin-bottom: 10px;
 }
 
-@media only screen and (max-device-width: 480px) {
+ @media (max-width: 800px) {
 	.modalContent, #modalImg{
 		display: block;
+		width:80%;
 		float: none;
 		margin-left:auto;
 		margin-right:auto;
-		position: absolute;
+		position: relative;
 		margin:none;
 		padding: none;
+	}
+	
+	.modalContent {
+		width:50%;
 	}
 }
