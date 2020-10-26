@@ -85,11 +85,23 @@
 				this.dimension = dimension;
 				}
 
-
+				var mle = "Martha Leugers-Encherman";
 				var MLE = [];
-				MLE.push(new art("images/MLE_3_birches.jpg","MLE","Birches","10x10in"));
-				MLE.push(new art("images/MLE_blue_water_gold_sand.jpg","MLE","BLUE","10x10in"));
-				MLE.push(new art("images/MLE_historic_fishtown.jpg","MLE","historic","10x10in"));
+				MLE.push(new art("images/MLE_3_birches.jpg", mle,"Birches","10x15in"));
+				MLE.push(new art("images/MLE_blue_water_gold_sand.jpg",mle,"BLUE","10x15in"));
+				MLE.push(new art("images/MLE_historic_fishtown.jpg",mle,"historic","10x15in"));
+
+				var rd = "Ryan Dineen";
+				var RD = [];
+				RD.push(new art("images/GoHomeBayRD.jpg", rd, "Go Home Bay", "18X18in"));
+				RD.push(new art("images/BehindTheIslandRD.jpg", rd, "Behind the Island", "18x18in"));
+				RD.push(new art("images/WreckIslandRD.jpeg", rd, "Wreck Island", "24x18in"));
+
+				var ar = "Alexis Rockman";
+				var AR = [];
+				AR.push(new art("images/WoodFrogAR.jpg", ar, "Wood Frog", "20x30in"));
+				AR.push(new art("images/UpperPeninsulaAR.jpg", ar, "Upper Peninsula", "5x5ft"));
+				AR.push(new art("images/IceFishingAR.jpg", ar, "Ice Fishing", "3x3ft"));
 
 			</script>	
 		</div>
@@ -98,6 +110,8 @@
 			
 
 			var idsMLE = [];
+			var idsRD = [];
+			var idsAR = [];
 			
 			window.onload = function() 
 			{		
@@ -115,6 +129,43 @@
 					document.getElementById(idsMLE[i]).addEventListener("click", function (event) {
 						alert(this.id);
 						modalWindow(this.id.charAt(3)); //substring? subat? 
+						//alert("I work!");
+					})
+				}
+
+				for(i=0; i<RD.length; i++) {
+					var img = document.createElement("img");
+					img.src = RD[i].src;
+					
+					var div = document.createElement("div");
+					div.class = "artwork";
+					div.appendChild(img);
+					
+					idsRD.push("rd" + i);
+					div.id = idsRD[i];
+					document.getElementById("gallery").appendChild(div);
+					document.getElementById(idsRD[i]).addEventListener("click", function (event) {
+						alert(this.id);
+						modalWindow(this.id.charAt(2)); //substring? subat? 
+						//alert("I work!");
+					})
+				}
+
+
+				for(i=0; i<AR.length; i++) {
+					var img = document.createElement("img");
+					img.src = AR[i].src;
+					
+					var div = document.createElement("div");
+					div.class = "artwork";
+					div.appendChild(img);
+					
+					idsAR.push("ar" + i);
+					div.id = idsAR[i];
+					document.getElementById("gallery").appendChild(div);
+					document.getElementById(idsAR[i]).addEventListener("click", function (event) {
+						alert(this.id);
+						modalWindow(this.id.charAt(2)); //substring? subat? 
 						//alert("I work!");
 					})
 				}
