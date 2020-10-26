@@ -106,6 +106,19 @@
 			</script>	
 		</div>
 		
+		<div id="modalBox">
+			<img id="modalImg" src="#">
+			<div class="modalContent">
+				<span class="closeModal">&times;</span>
+				<h2>Artist</h2>
+				<p id="imgArtist"></p>
+				<h2>Title</h2>
+				<p id="imgTitle"></p>
+				<h2>Dimensions</h2>
+				<p id="imgDimensions"></p>
+			</div>
+		</div>
+
 		<script language="javascript">
 			
 
@@ -147,6 +160,7 @@
 					document.getElementById(idsRD[i]).addEventListener("click", function (event) {
 						alert(this.id);
 						modalWindow(this.id.charAt(2)); //substring? subat? 
+						modalBox.style.display = "block";
 						//alert("I work!");
 					})
 				}
@@ -165,62 +179,16 @@
 					document.getElementById("gallery").appendChild(div);
 					document.getElementById(idsAR[i]).addEventListener("click", function (event) {
 						alert(this.id);
-						modalWindow(this.id.charAt(2)); //substring? subat? 
+						modalBox = document.getElementById("modalBox");
+						modalBox.style.display = "block";
+						modalWindow(this.id); //substring? subat? 
 						//alert("I work!");
 					})
 				}
 			}
 
-			function modalWindow(i) {
-				var divBox = document.createElement("div");
-				divBox.id = (MLE[i].artist + "modal");
-				divBox.class = "modalBox";
-				alert("First box made " + MLE[i].artist);
-				return;
-				
-				var modalPic = document.createElement("img");
-				modalPic.src = this.src;
-				modalPic.class = "modalPic";
-
-				var modalText = document.createElement("div");
-				modalText.id = divBox.id + "Text";
-				modalText.class = "modalText";
-
-				var closeSpan = document.createElement("span");
-				closeSpan.id = divBox.id + "Close";
-
-				var email = document.createElement("input");
-				email.type = email;
-				email.required = 1;
-				email.placeholder = "Email";
-
-				var buyButton = document.createElement("button");
-				buyButton.id = idsMLE[i] + "buy";
-				buyButton.value = "Contact " + MLE[i].artist + " for Details";
-
-				divBox.appendChild(modalPic);
-				divBox.appendChild(modalText);
-				modalText.appendChild(email);
-				modalText.appendChild(buyButton);
-				divBox.appendChild(closeSpan);
-
-				document.getElementById(closeSpan.id).innerHTML = "&times;";
-				document.getElementById(modalText.id).innerHTML = 
-				"Title: " + MLE[i].title + "</br>Artist: " + MLE[i].artist + "</br>Dimensions: " + MLE[i].dimension + "</br>Image ID Number: " + idsMLE[i];
-
-				buyButton.onclick = function() {
-					(alert("Your contact details and interest in " + MLE[i].title + " have been sent to " + MLE[i].artist + " and they will get in touch with you shortly. Thank you for supporting the Great Lakes!"));
-				}
-
-				closeSpan.onclick = function() {
-					divBox.style.display = "none";
-				}
-
-				window.onclick = function(event) {
-					if (event.target == divBox) {
-						divBox.style.display = "none";
-					}
-				}
+			function modalWindow(imgId) {
+				img = document.getElementById("modalImg");
 			}
 
 
