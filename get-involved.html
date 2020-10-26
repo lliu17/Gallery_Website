@@ -10,21 +10,42 @@
 		<title>GLG: Get Involved</title>
 
 		<style>
-			.left, .right {
-				display: inline-block;
-				margin-bottom: 40px;
+			.twoForms {
+				
+				display: block;
+				margin-left: auto;
+  				margin-right: auto;
+				width:50%;
+				
 			}
 
 			.left {
+				color: paleturquoise;
+				background: linear-gradient(rgba(255,255,255,.1), rgba(255,255,255,.6)), url("images/photo-1541617219835-3689726fa8e7.jpg");
+				
+				padding: 10px;
+				padding-left: 20px;
+				height: 500px;
 				width: 40%;
+				margin:0;
 				float: left;
-				margin-left: 180px;
-				padding-bottom: 20px;
+				border-radius: 1%;
+				margin-bottom: 10px;
 			}
 
 			.right {
+				color:rgba(75,26,6,1.00);
+				background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.7)), url("images/photo-1582967788606-a171c1080cb0.jpg");
+				background-position:bottom;
+				
+				padding: 10px;
+				padding-left: 20px;
 				width: 40%;
+				height: 500px;
+				margin:0;
 				float: right;
+				border-radius: 1%;
+				margin-bottom: 10px;
 			}
 
 			#dvtext {
@@ -68,6 +89,40 @@
 				alert("You have successfully registered for " + eventName + "!");
 
 			}
+			
+			function validate1() {
+				if (document.data1.name.value=="") {
+					alert("Please enter your name");
+					document.data.name.focus();
+					document.data.name.select();
+					return false;
+				}
+				if (document.data1.email.value=="") {
+					alert("Please enter an email");
+					document.data1.email.focus();
+					document.data1.email.select();
+					return false;
+				}
+				registerMsg();
+				return true;
+			}
+			
+			function validate2() {
+				if (document.data2.name.value=="") {
+					alert("Please enter your name");
+					document.data.name.focus();
+					document.data.name.select();
+					return false;
+				}
+				if (document.data2.email.value=="") {
+					alert("Please enter an email");
+					document.data1.email.focus();
+					document.data1.email.select();
+					return false;
+				}		
+				donationMsg();
+				return true;
+			}
 
 		</script>
 
@@ -96,47 +151,10 @@
 			</ul>
 		</div>
 
-		<div class="top right">
-			<h2>Become a Donor</h2>
-			<form>
-				<label>Name:</label><br>
-				<input type="text" name="name" required/><br><br>
-
-				<label>Email:</label><br>
-				<input type="email" name="email" required/><br><br>
-
-				<label>Donation Amount:</label><br>
-				<input type="radio" id="5dollar" name="amount" value="5dollar">
-				<label for="5dollar">$5</label><br>
-				<input type="radio" id="10dollar" name="amount" value="10dollar">
-				<label for="10dollar">$10</label><br>
-				<input type="radio" id="20dollar" name="amount" value="20dollar">
-				<label for="20dollar">$20</label><br>
-				<input type="radio" id="customAmt" name="amount" value="customAmt">
-				<label for="customAmt">Custom Amount</label><br>
-
-				<div id="dvtext">
-			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter amount:
-			    <input type="text" id="txtBox" /><br><br>
-				</div>
-
-				<label>Donation Frequency:</label><br>
-				<input type="radio" id="oneTime" name="freq" value="oneTime">
-				<label for="oneTime">One Time</label><br>
-				<input type="radio" id="monthly" name="freq" value="monthly">
-				<label for="monthly">Monthly</label><br><br>
-
-				<label>Comment or Message:</label><br>
-				<textarea name="message"></textarea><br>
-
-				<input class="button" type="submit" value="send" onclick="donationMsg()"/>
-
-			</form>
-		</div>
-
-		<div class="right">
+		<div class="twoForms">
+		<div class="left">
 			<h2>Register for an Upcoming Event</h2>
-			<form>
+			<form onsubmit="return validate1()" name="data1" method="post">
 				<label for="events">Select Event:</label><br>
 				<select id="events" name="events">
 					<option value="zoom">Zoom and Paint</option>
@@ -161,8 +179,48 @@
 					<option value="other">Other</option>
 				</select><br><br>
 
-				<input class="button" type="submit" value="send" onclick="registerMsg()"/>
+<!--				<input class="button" type="submit" value="send" onclick="registerMsg()"/>-->
+				<input class="button" type="submit" value="send"/>
 			</form>
+		</div>
+		
+		<div class="right">
+			<h2>Become a Donor</h2>
+			<form onsubmit="return validate2()" name="data2" method="post">
+				<label>Name:</label><br>
+				<input type="text" name="name" required/><br><br>
+
+				<label>Email:</label><br>
+				<input type="email" name="email" required/><br><br>
+
+				<label>Donation Amount:</label><br>
+				<input type="radio" id="5dollar" name="amount" value="5dollar" required>
+				<label for="5dollar">$5</label><br>
+				<input type="radio" id="10dollar" name="amount" value="10dollar">
+				<label for="10dollar">$10</label><br>
+				<input type="radio" id="20dollar" name="amount" value="20dollar">
+				<label for="20dollar">$20</label><br>
+				<input type="radio" id="customAmt" name="amount" value="customAmt">
+				<label for="customAmt">Custom Amount</label><br>
+
+				<div id="dvtext">
+			    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enter amount:
+			    <input type="text" id="txtBox" /><br><br>
+				</div>
+
+				<label>Donation Frequency:</label><br>
+				<input type="radio" id="oneTime" name="freq" value="oneTime" required>
+				<label for="oneTime">One Time</label><br>
+				<input type="radio" id="monthly" name="freq" value="monthly">
+				<label for="monthly">Monthly</label><br><br>
+
+				<label>Comment or Message:</label><br>
+				<textarea name="message"></textarea><br>
+
+				<input class="button" type="submit" value="send"/>
+
+			</form>
+		</div>
 		</div>
 
 
