@@ -108,6 +108,26 @@ li.currentPage {
 	filter: drop-shadow(10px 10px 0 #80BFFF);
 }
 
+
+#gallery div img {
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:100%;
+	max-height:100%;
+}
+
+#gallery div {
+	padding-top: 3%;
+	padding-left: 3%;
+	padding-bottom: 3%;
+	display:inline-block;
+	width:33%;
+	height:400px;
+	box-sizing: border-box;
+}
+
+
 /* The Modal (background) */
 #modalBox {
 	display: none; /* Hidden by default */
@@ -118,13 +138,12 @@ li.currentPage {
 	width: 100%; /* Full width */
 	height: 100%; /* Full height */
 	overflow: auto; /* Enable scroll if needed */
-	background-color: rgb(0,0,0); /* Fallback color */
-	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	background-color: rgb(106, 109, 153); /* Fallback color */
   }
   
   /* Modal Content/Box */
   #modalContent {
-	background-color: #80BFFF;
+	background-color: rgba(123, 198, 248, 0.808);
 	padding: 10px;
 	padding-left: 20px;
 	width: 20%;
@@ -133,6 +152,7 @@ li.currentPage {
 	float: right;
 	border-radius: 1%;
 	margin-bottom: 10px;
+	border: 2px solid #00008B;
   }
   
 #modalImg {
@@ -146,17 +166,3 @@ li.currentPage {
 	margin-bottom: 10px;
 }
 
-  /* The Close Button */
-.close {
-	color: #aaa;
-	float: right;
-	font-size: 28px;
-	font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-	color: black;
-	text-decoration: none;
-	cursor: pointer;
-  }
