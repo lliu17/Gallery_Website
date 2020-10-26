@@ -127,6 +127,9 @@ li.currentPage {
 	box-sizing: border-box;
 }
 
+#gallery div img:hover {
+	border: 3px #000000 solid;
+}
 
 /* The Modal (background) */
 #modalBox {
