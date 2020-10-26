@@ -34,6 +34,18 @@
 				}
 			}
 
+			@media only screen and (max-width:600) {
+				#modalImg, #modalContent {
+					width: 100%;
+					float: none;
+					display: block;
+					padding:30%;
+				}
+
+				#dimensionHeader {
+					display: none;
+				}
+			}
 			
 		</style>
 
@@ -73,9 +85,9 @@
 
 				var mle = "Martha Leugers-Encherman";
 				var MLE = [];
-				MLE.push(new art("images/MLE_3_birches.jpg", mle,"Birches","10x15in"));
-				MLE.push(new art("images/MLE_blue_water_gold_sand.jpg",mle,"BLUE","10x15in"));
-				MLE.push(new art("images/MLE_historic_fishtown.jpg",mle,"historic","10x15in"));
+				MLE.push(new art("images/MLE_3_birches.jpg", mle,"Three Birches","10x15in"));
+				MLE.push(new art("images/MLE_blue_water_gold_sand.jpg",mle,"Blue Water, Gold Sand","10x15in"));
+				MLE.push(new art("images/MLE_historic_fishtown.jpg",mle,"Historic Fishtown","10x15in"));
 
 				var rd = "Ryan Dineen";
 				var RD = [];
@@ -99,10 +111,10 @@
 				<p id="imgArtist"></p>
 				<h2>Title: </h2>
 				<p id="imgTitle"></p>
-				<h2>Dimensions: </h2>
+				<h2 id="dimensionHeader">Dimensions: </h2>
 				<p id="imgDimensions"></p>
-				<input type="email" required="1" id="buyerEmail" placeholder="Email">
-				<button id="buyButton">Enquire</button>
+				<input type="email" id="buyerEmail" placeholder="Email">
+				<button id="buyButton" onclick="thankBuyer()">Enquire</button>
 			</div>
 		</div>
 
@@ -129,6 +141,8 @@
     				modalBox.style.display = "none";
   				}
 			}
+
+			
 			
 			window.onload = function() 
 			{		
@@ -207,18 +221,16 @@
 				document.getElementById("imgArtist").innerHTML = painting.artist;
 				document.getElementById("imgDimensions").innerHTML = painting.dimension;
 				document.getElementById("imgTitle").innerHTML = painting.title;
-
-				buyButton.value = img;
-
-				buyButton.onclick(function () {
-					if (buyerEmail.value == "") {
-						alert("Please enter your email to enquire")
-					} else {
-						alert("Thank you for your interest in " + painting.title + ". Your email has been sent to " + painting.artist + "and they will get in touch with you shortly. Thank you for supporting the Great Lakes!");
-					}
-				});
 			}
 
+			function thankBuyer() {
+				if (buyerEmail.value == "") {
+						alert("Please enter your email to enquire")
+					} else {
+						alert("Thank you for your interest in '" + document.getElementById("imgTitle").innerText + "'.  Your email has been sent to " + document.getElementById("imgArtist").innerText + " and they will get in touch with you shortly. Thank you for supporting the Great Lakes!");
+						buyerEmail.value = "";
+					}
+			}
 			
 
 		</script>
