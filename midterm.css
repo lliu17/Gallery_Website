@@ -130,29 +130,37 @@ li.currentPage {
 
 /* The Modal (background) */
 #modalBox {
-	display: none; 
-	position: fixed; 
-	z-index: 1; 
+	margin-top: 10px;
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
 	left: 0;
 	top: 0;
-	width: 100%; 
-	height: 100%; 
-	overflow: auto; 
-	background-color: rgb(106, 109, 153);
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(255, 255, 255, .8); /* Fallback color */
   }
   
+#innerBox {
+	position: relative;
+	margin-left:auto;
+	margin-right:auto;
+}
+
   /* Modal Content/Box */
-  #modalContent {
-	background-color: rgba(123, 198, 248, 0.808);
+  .modalContent {
+	background-color: rgba(255, 255, 255, 1);
 	padding: 10px;
 	padding-left: 20px;
 	width: 20%;
-	height: 600px;
-	margin:0;
-	float: right;
+	height: 400px;
+	margin-top:10px;
+/*	float: right;*/
+	display: inline-block;
 	border-radius: 1%;
 	margin-bottom: 10px;
-	border: 2px solid #00008B;
+/*	border: 2px solid #00008B;*/
   }
   
 #modalImg {
@@ -160,9 +168,22 @@ li.currentPage {
 	padding-left: 20px;
 	max-height: 700px;
 	max-width: 70%;
+	
 	margin:0;
 	float: left;
+	margin-left:200px;
 	border-radius: 1%;
 	margin-bottom: 10px;
 }
 
+@media only screen and (max-device-width: 480px) {
+	.modalContent, #modalImg{
+		display: block;
+		float: none;
+		margin-left:auto;
+		margin-right:auto;
+		position: absolute;
+		margin:none;
+		padding: none;
+	}
+}
