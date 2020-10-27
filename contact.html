@@ -66,6 +66,8 @@
 			}
 
 		</style>
+
+		
 	</head>
 	<body>
 		<h1>Great Lakes Gallery</h1>
@@ -91,14 +93,13 @@
 			</ul>
 		</div>
 
-		<div id="hehe">
-		</div>
-
+	
 		<div class="contactForm">
 			<h2>Contact Form</h2>
+			<p>Sign up here to receive our newsletter!</p>
 			<form>
 				<label>Name:</label>
-				<input type="text" name="name" required/>
+				<input type="text" id="name" required/>
 				
 				<label>Email:</label>
 				<input type="email" name="email" required/>
@@ -107,15 +108,23 @@
 				<input type="tel" name="phone"/>
 				
 				<label>Message:</label>
-				<textarea name="message" required></textarea>
+				<textarea name="message"></textarea>
 				
-				<input class="button" type="submit" value="send"/>
+				<button class="button" type="submit" id="submitButton" >Submit</button>
 			</form>
 		</div>
-		
+
+		<script language="javascript">
+
+			var submit = document.getElementById("submitButton");
+			submit.onclick = function () {
+					alert("Welcome to the Great Lakes Gallery community! Thank you for signing up for our newsletter.");
+				}
+
+		</script>
 				
 		<footer id="mainFooter">
-			<p>Copyright &copy; 2020 The Intimadating Elizas</p>
+			<p>Copyright &copy; 2020 The Intimidating Elizas</p>
 		</footer>
 
 	</body>
